@@ -116,7 +116,7 @@ Cars::with("Brand", "=", "Toyota")
       ]);
 ```
 
-#### 2. 1 enkele column zonder array updaten
+#### 2. Één enkele column zonder array updaten
 Je kan een enkele kolom ook updaten door de columnname en de value als argument mee te geven in de update functie
 ```php
 
