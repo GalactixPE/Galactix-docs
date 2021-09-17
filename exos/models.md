@@ -100,6 +100,23 @@ Cars::with("Brand", "=", "Toyota")
   });
 ```
 
+#### From target
+Stel dat je één enkele kolom wilt opvragen uit de database, dan kun je gebruik maken van de `from()` method. 
+
+Deze method komt overeen met de `SELECT ... FROM ...` query in SQL
+
+```php
+Cars::from("kilometerstand"
+  ->with("Brand", "=", "Toyota")
+  ->fetchAll(function($result){
+      var_dump($result);
+    });
+```
+
+#### Result
+Wanneer je data opvraagt via een model krijg je het resultaat terug in een closure.
+todo
+
 ### Data updaten
 Je kan data updaten via de `update()` functie op 2 manieren
 
