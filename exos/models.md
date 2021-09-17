@@ -2,11 +2,13 @@
 
 **Lees eerst de documentatie van de gewone query builder**
 
+
+
+## Models
 Exos maakt het zeer gemakkelijk om specifieke data op te halen uit de database. Een van de tools die je kan gebruiken om met data om te gaan in je code zijn Exos Models.
 Een model is een class die de `Model` class extend. De class moet genoemd worden naar de `table` dat die modeled
 
-Een simpel voorbeeldje van een model
-## voorbeeld
+### Simpel voorbeeld
 ```php
 namespace ....;
 
@@ -19,8 +21,59 @@ class Cars extends Model {
 
 ```
 
+### Speciale properties
+#### tablename
+Soms kan het zijn dat de Modelnaam niet hetzelfde is als de tablenaam. In dat geval kan je gebruik maken van de `protected string $tableName` property. In het onderstaande geval heet onze model `Cars`, maar heet de table `car`.
+```php
+namespace ....;
 
-Met deze class kunnen we allerlei interessante dingen doen.
+use GalactixPE\CityCore\libs\Exos\model\Model;
+
+class Cars extends Model {
+  
+  protected string $tableName = "car";
+
+}
+
+```
+
+#### primary key column
+Als je je primary key column `id` heet dan hoef je niks meer te doen. Als dit niet het geval is dan kun je gebruik maken van de `protected string $primaryKeyTable` property.
+
+```php
+namespace ....;
+
+use GalactixPE\CityCore\libs\Exos\model\Model;
+
+class Cars extends Model {
+  
+  protected string $primaryKeyTable = "car_id";
+
+}
+
+```
+
+### PHPStan
+Deze stap is **optioneel**, maar wel nodig om PHPStan tevreden te houden en om gebruik te kunnen maken van de autocompletion in je IDE. 
+
+Bij elke model kun je een PHPDoc toevoegen die alle columns definieert. Dit doe je als volgt:
+
+```php
+namespace ....;
+
+use GalactixPE\CityCore\libs\Exos\model\Model;
+
+/**
+* @property int $id
+* @property string $brand
+* @property int $kilometerstand 
+*/
+class Cars extends Model {
+  
+
+}
+
+```
 
 ## Data ophalen uit de database
 ### Where selector
