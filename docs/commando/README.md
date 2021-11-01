@@ -33,6 +33,8 @@ class MyCommand extends BaseCommand {
 If we register arguments, we need to import and use / extend (if needed) the provided argument objects.
 
 ```php
+<?php
+
 use GalactixPE\CityCore\libs\Commando\args\RawStringArgument;
 
 	protected function prepare(): void {
@@ -46,6 +48,8 @@ use GalactixPE\CityCore\libs\Commando\args\RawStringArgument;
 The arguments passed on our `onRun` method will be mapped by `name => value` this makes it easy to understand which argument is which, instead of using numeric indices. It is also guaranteed that the arguments passed will be the declared type that we've set.
 
 ```php
+<?php
+
 	public function onRun(CommandSender $sender, string $aliasUsed, array $args): void {
 		if(isset($args["name"])){
 			$sender->sendMessage("Hello, " . $args["name"] . "!");
@@ -60,6 +64,8 @@ The arguments passed on our `onRun` method will be mapped by `name => value` thi
 Once we've constructed our command with our arguments and subcommands, we can now register our command to PocketMine's command map, to be available to our users.
 
 ```php
+<?php
+
 // onEnable:
 $this->registerCommand(new MyCustomCommand($this, "examplecommand", "My Description"));
 ```
@@ -75,6 +81,8 @@ Subcommands work the same way as regular commands, the only difference is that t
 The virion provides default error messages for user input errors regarding the arguments given. It also provides a way to register your own error message formats for the sake of customizability.
 
 ```php
+<?php
+
 $cmdCtx->setErrorFormat($errorCode, $format);
 // Arrays can be passed on `BaseCommand->setErrorFormats()` to bulk-set other error messages
 ```

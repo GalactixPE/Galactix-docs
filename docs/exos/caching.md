@@ -1,4 +1,4 @@
-# Exos Caching
+# Caching
 
 Geen zin om zelf een caching systeem te maken? Dat hoeft ook helemaal niet! Als je exos models gebruikt, dan kun je gewoon het ingebouwde caching systeem gebruiken. In deze read me lees je exact hoe dat moet.
 
@@ -19,6 +19,8 @@ Voordat we beginnen is het belangrijk dat je je model "klaar maakt" om gecached 
 Het is de bedoeling dat je elke model die je gebruikt, registreert bij de Exos ModelManager.
 
 ```php
+<?php
+
 public function onEnable(): void
 {
   ModelManager::register(TestModel::class);
@@ -30,6 +32,8 @@ public function onEnable(): void
 Elke model class die gecached moet worden, moet de `Cacheable` interface implementeren
 
 ```php
+<?php
+
 class TestModel extends Model Implements Cacheable {
 
 
@@ -42,6 +46,8 @@ class TestModel extends Model Implements Cacheable {
 Als de primary key column **niet** `id` heet, dan moet je dit aangeven in de Model class. Dit doe je door de `protected $primaryKeyColumn` property te herdefinieren.
 
 ```php
+<?php
+
 class TestModel extends Model Implements Cacheable {
 
   protected $primaryKeyColumn = "id";

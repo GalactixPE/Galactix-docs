@@ -13,6 +13,8 @@ All the closures passed to EasyUI classes must declare a variable of the class P
 Creating a form with a button without an icon:
 
 ```php
+<?php
+
 $form = new SimpleForm("This is the title");
 $form->addButton(new Button("Say hi", null, function(Player $player) {
     $player->sendMessage("Hello!");
@@ -23,6 +25,8 @@ $player->sendForm($form);
 Creating a form with a button with an icon:
 
 ```php
+<?php
+
 $form = new SimpleForm("This is the title");
 $form->addButton(new Button("Press me!", new ButtonIcon("https://introduce-the-image-url.here"), function(Player $player) {
     $player->sendMessage("Hey! Thanks for pressing me :)");
@@ -33,12 +37,16 @@ $player->sendForm($form);
 Creating a form with a header text (optional):
 
 ```php
+<?php
+
 new SimpleForm("This is the title", "This is the header text");
 ```
 
 Controlling what happens when a form closes (optional):
 
 ```php
+<?php
+
 $form->setCloseListener(function(Player $player) {
     echo "The form was closed!";
 })
@@ -49,6 +57,8 @@ $form->setCloseListener(function(Player $player) {
 Creating a modal form and handling what happens when the player presses "accept" or "deny":
 
 ```php
+<?php
+
 $form = new ModalForm("The title goes here!", "Do you want this plugin to save you a lot of time?");
 $form->setAcceptListener(function(Player $player) {
     $player->sendMessage("Great! Keep building good software");
@@ -63,6 +73,8 @@ $form->setDenyListener(function(Player $player) {
 You can also change the text of the buttons:
 
 ```php
+<?php
+
 $form->setAcceptText("Yes");
 $form->setDenyText("Yesn't");
 ```
@@ -72,6 +84,8 @@ $form->setDenyText("Yesn't");
 Creating a custom form with an input and a dropdown
 
 ```php
+<?php
+
 $form = new CustomForm("This is the title!");
 $form->addElement("my_text", new Input("This is the input header text!"));
 
@@ -101,6 +115,8 @@ In some cases, the forms are huge and mess up the code. In those cases, you can 
 ### SimpleForm
 
 ```php
+<?php
+
 class ExampleForm extends SimpleForm {
 
     public function __construct() {
@@ -122,6 +138,8 @@ class ExampleForm extends SimpleForm {
 ### ModalForm
 
 ```php
+<?php
+
 class ExampleForm extends ModalForm {
 
     public function __construct() {
@@ -144,6 +162,8 @@ class ExampleForm extends ModalForm {
 ### CustomForm
 
 ```php
+<?php
+
 class ExampleForm extends CustomForm {
 
     public function __construct() {
@@ -165,5 +185,7 @@ class ExampleForm extends CustomForm {
 Then you can send the forms as you normally would with:
 
 ```php
+<?php
+
 $player->sendForm(new ExampleForm());
 ```

@@ -1,5 +1,5 @@
-# Exos documentatie
+# Inhoudstafel
 
-- [Model builder](https://github.com/GalactixPE/Galactix-docs/blob/main/exos/models.md)
-- [Caching](https://github.com/GalactixPE/Galactix-docs/blob/main/exos/caching.md)
+- [Model builder](/exos/models)
+- [Caching](/exos/caching)
 - Standaard Query builder

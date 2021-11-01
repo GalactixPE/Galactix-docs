@@ -1,4 +1,4 @@
-# Exos Model systeem
+# Models
 
 **Lees eerst de documentatie van de gewone query builder**
 
@@ -10,6 +10,8 @@ Een model is een class die de `Model` class extend. De class moet genoemd worden
 ### Simpel voorbeeld
 
 ```php
+<?php
+
 namespace ....;
 
 use GalactixPE\CityCore\libs\Exos\model\Model;
@@ -28,6 +30,8 @@ class Cars extends Model {
 Soms kan het zijn dat de Modelnaam niet hetzelfde is als de tablenaam. In dat geval kan je gebruik maken van de `protected string $tableName` property. In het onderstaande geval heet onze model `Cars`, maar heet de table `car`.
 
 ```php
+<?php
+
 namespace ....;
 
 use GalactixPE\CityCore\libs\Exos\model\Model;
@@ -45,6 +49,8 @@ class Cars extends Model {
 Als je je primary key column `id` heet dan hoef je niks meer te doen. Als dit niet het geval is dan kun je gebruik maken van de `protected string $primaryKeyTable` property.
 
 ```php
+<?php
+
 namespace ....;
 
 use GalactixPE\CityCore\libs\Exos\model\Model;
@@ -64,6 +70,8 @@ Deze stap is **optioneel**, maar wel nodig om PHPStan tevreden te houden en om g
 Bij elke model kun je een PHPDoc toevoegen die alle columns definieert. Dit doe je als volgt:
 
 ```php
+<?php
+
 namespace ....;
 
 use GalactixPE\CityCore\libs\Exos\model\Model;
@@ -87,6 +95,8 @@ class Cars extends Model {
 Je kan met de `with()` functie selecten wat je precies uit de database wilt.
 
 ```php
+<?php
+
 Cars::with("Brand", "=", "Toyota");
 Cars::with("Kilometerstand", ">", 5000);
 Cars::with("id", "!=", 1);
@@ -104,6 +114,7 @@ Deze functies kun je combineren met de `with()` functie van hierboven
 Alle data wordt terug meegegeven als eerste argument in de closure
 
 ```php
+<?php
 
 Cars::with("Brand", "=", "Toyota")
   ->fetchAll(function($result){
@@ -118,6 +129,8 @@ Stel dat je één enkele kolom wilt opvragen uit de database, dan kun je gebruik
 Deze method komt overeen met de `SELECT ... FROM ...` query in SQL
 
 ```php
+<?php
+
 Cars::from("kilometerstand"
   ->with("Brand", "=", "Toyota")
   ->fetchAll(function($result){
@@ -141,6 +154,7 @@ Deze functie kun je combineren met de `with()` functie
 Met deze manier kan je meerdere columns tegelijk updaten
 
 ```php
+<?php
 
 Cars::with("Brand", "=", "Toyota")
   ->update([
@@ -154,6 +168,7 @@ Cars::with("Brand", "=", "Toyota")
 Je kan een enkele kolom ook updaten door de columnname en de value als argument mee te geven in de update functie
 
 ```php
+<?php
 
 Cars::with("Brand", "=", "Toyota")
   ->update("prijs", 50000);
