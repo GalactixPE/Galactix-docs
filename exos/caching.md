@@ -41,7 +41,7 @@ class TestModel extends Model Implements Cacheable {
 ```
 
 
-Voila klaar is kees! Nu ben je helemaal klaar om de caching features van Exos te gebruiken.
+Voila klaar is kees! Nu ben je helemaal klaar om de caching features van Exos te gebruiken. Wanneer de server opstart zal alle data in memory worden opgenomen.
 
 De data wordt opgeslagen naar de database:
 * Wanneer de server uitgaat
