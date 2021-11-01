@@ -1,5 +1,5 @@
 # Inhoudstafel
 
-- [Model builder](exos/models)
-- [Caching](exos/caching)
+- [Model builder](models)
+- [Caching](caching)
 - Standaard Query builder
