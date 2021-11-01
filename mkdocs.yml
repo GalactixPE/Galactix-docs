@@ -3,3 +3,8 @@ docs_dir: docs
 site_dir: .github/workflows/docs/web
 theme:
   name: material
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
