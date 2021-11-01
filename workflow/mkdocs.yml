@@ -1,0 +1,8 @@
+site_name: GalactixPE
+nav:
+    - Home: index.md
+    - Exos:
+        - "Caching": exos/caching.md
+        - "Models": exos/models.md
+
+theme: readthedocs
