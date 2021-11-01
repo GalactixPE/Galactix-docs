@@ -1,4 +1,4 @@
-site-name: GalactixPE devs
+site_name: GalactixPE devs
 docs_dir: /
 theme:
   name: material
