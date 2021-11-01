@@ -1,5 +1,5 @@
 site_name: GalactixPE devs
-docs_dir: /docs
+docs_dir: docs
 site_dir: .github/workflows/docs/web
 theme:
   name: material
