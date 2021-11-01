@@ -30,4 +30,4 @@ jobs:
             # pip version of MkDocs
             mkdocs_version: latest
             # path to mkdocs.yml
-            configfile: workflow/mcdocs.yml
+            configfile: workflows/mcdocs.yml
