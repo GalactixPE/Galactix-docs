@@ -92,7 +92,8 @@ Nadat je hebt gespecifieerd aan welke voorwaarde de data moet voldoen, kun je ki
 Je kan ook makkelijk data ophalen adhv de primary key met de `get()` functie. De get functie zal snel de data ophalen met de gevraagde primary key. Aangezien primary keys `unique` zijn, zal je slechts één resultaat krijgen.
 
 !!! info
-  De primary key wordt gedefinieerd in de model class. Zie //wip link inserten.
+
+    De primary key wordt gedefinieerd in de model class. Zie //wip link inserten.
 
 ```php
 <?php
@@ -108,7 +109,8 @@ Car::cache()->get(10);
 
 ```
 !!! warning
-  De fetchAll() en firstOrNull() functie returnen allebei direct de data. Dus het is niet nodig om een closure mee te geven. Mocht je closures leuker vinden, dan kun je die ook gebruiken.
+
+    De fetchAll() en firstOrNull() functie returnen allebei direct de data. Dus het is niet nodig om een closure mee te geven. Mocht je closures leuker vinden, dan kun je die ook gebruiken.
 
 ## Gecachte data updaten
 
