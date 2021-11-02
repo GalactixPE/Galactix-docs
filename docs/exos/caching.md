@@ -62,3 +62,57 @@ De data wordt opgeslagen naar de database:
 - Wanneer de server uitgaat
 - Om de x ticks
 - Als er expliciet wordt gevraagd om de cache op te slaan met `CacheManager::saveCache()`
+
+## Selector
+Soms kan het zijn dat je slechts een specifiek deel van de data wilt. In dat geval kun je gebruik maken van de selectors in Exos. Deze selectors worden uitgebreid besproken in de **model docs.** 
+
+Kort samengevat, je kan de `where()` functie gebruiken om te specifieren aan welke voorwaarde de data waarop je de query zal uitvoeren moet voldoen.
+
+```php
+<?php
+
+Car::cache()->where("brand", "=", "toyota");
+
+```
+
+## Gecachte data ophalen
+### Inleiding
+Je kan zoals bij gewone models, data ophalen. Bij gecachte models gaat dit een heeeeeeeeeel klein beetje anders, echt waar. Het enige wat je moet doen is `cache()` toevoegen na de modelnaam en voila! Je kan al je favoriete functies gebruiken om je data op te halen.
+
+```php linenums="1"
+<?php
+
+Car::cache()->fetchAll();
+
+```
+
+### Data fetchen
+Nadat je hebt gespecifieerd aan welke voorwaarde de data moet voldoen, kun je kiezen om **alle data** of slechts **een rij** uit de cache op te halen.
+
+Je kan ook makkelijk data ophalen adhv de primary key met de `get()` functie. De get functie zal snel de data ophalen met de gevraagde primary key. Aangezien primary keys `unique` zijn, zal je slechts één resultaat krijgen.
+
+!!! info
+  De primary key wordt gedefinieerd in de model class. Zie //wip link inserten.
+
+```php
+<?php
+
+// haalt alle data op
+Car::cache()->where("brand", "=", "toyota")->fetchAll();
+
+// haalt slechts 1 rij op uit de cache
+Car::cache()->where("brand", "=", "toyota")->firstOrNull();
+
+// haalt de data op adhv de primary key
+Car::cache()->get(10);
+
+```
+!!! warning
+  De fetchAll() en firstOrNull() functie returnen allebei direct de data. Dus het is niet nodig om een closure mee te geven. Mocht je closures leuker vinden, dan kun je die ook gebruiken.
+
+## Gecachte data updaten
+
+
+
+
+
