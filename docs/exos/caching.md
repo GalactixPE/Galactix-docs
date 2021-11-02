@@ -2,9 +2,12 @@
 
 Geen zin om zelf een caching systeem te maken? Dat hoeft ook helemaal niet! Als je exos models gebruikt, dan kun je gewoon het ingebouwde caching systeem gebruiken. In deze read me lees je exact hoe dat moet.
 
+
+
 ## Models voorbereiden
 
 Voordat we beginnen is het belangrijk dat je je model "klaar maakt" om gecached te worden. Hoe doe je dit?
+
 
 ### Requirements
 
@@ -13,6 +16,7 @@ Voordat we beginnen is het belangrijk dat je je model "klaar maakt" om gecached 
   - Een gewone primary key die niet zijn value krijgt op de MySQL server.
 - Model registreren
 - Model moet de Cacheable interface implementen
+
 
 ### De models registreren
 
@@ -27,6 +31,7 @@ public function onEnable(): void
 }
 ```
 
+
 ### Cacheable interface implementen
 
 Elke model class die gecached moet worden, moet de `Cacheable` interface implementeren
@@ -40,6 +45,7 @@ class TestModel extends Model Implements Cacheable {
 
 }
 ```
+
 
 ### Primary key column
 
@@ -63,6 +69,8 @@ De data wordt opgeslagen naar de database:
 - Om de x ticks
 - Als er expliciet wordt gevraagd om de cache op te slaan met `CacheManager::saveCache()`
 
+
+
 ## Selector
 Soms kan het zijn dat je slechts een specifiek deel van de data wilt. In dat geval kun je gebruik maken van de selectors in Exos. Deze selectors worden uitgebreid besproken in de **model docs.** 
 
@@ -75,7 +83,11 @@ Car::cache()->where("brand", "=", "toyota");
 
 ```
 
+
+
 ## Gecachte data ophalen
+
+
 ### Inleiding
 Je kan zoals bij gewone models, data ophalen. Bij gecachte models gaat dit een heeeeeeeeeel klein beetje anders, echt waar. Het enige wat je moet doen is `cache()` toevoegen na de modelnaam en voila! Je kan al je favoriete functies gebruiken om je data op te halen.
 
@@ -86,6 +98,7 @@ Car::cache()->fetchAll();
 
 ```
 
+
 ### Data fetchen
 Nadat je hebt gespecifieerd aan welke voorwaarde de data moet voldoen, kun je kiezen om **alle data** of slechts **een rij** uit de cache op te halen.
 
@@ -94,6 +107,7 @@ Je kan ook makkelijk data ophalen adhv de primary key met de `get()` functie. De
 !!! info
 
     De primary key wordt gedefinieerd in de model class. Zie //wip link inserten.
+
 
 ```php
 <?php
@@ -108,6 +122,8 @@ Car::cache()->where("brand", "=", "toyota")->firstOrNull();
 Car::cache()->get(10);
 
 ```
+
+
 !!! warning
 
     De fetchAll() en firstOrNull() functie returnen allebei direct de data. Dus het is niet nodig om een closure mee te geven. Mocht je closures leuker vinden, dan kun je die ook gebruiken.
