@@ -12,25 +12,25 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Exos:
-    - exos/README.md
-    - Models: exos/models.md
-    - Cache: exos/caching.md
+      - exos/README.md
+      - Models: exos/models.md
+      - Cache: exos/caching.md
   - EasyUI:
-    - easyui/README.md
+      - easyui/README.md
   - Commando:
-    - commando/README.md
+      - commando/README.md
 
 theme:
   name: material
   palette: 
-    - scheme: default
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to dark mode
-    - scheme: slate 
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to light mode
+  - scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch to dark mode
+  - scheme: slate 
+    toggle:
+      icon: material/toggle-switch
+      name: Switch to light mode
 
 plugins:
   - section-index
