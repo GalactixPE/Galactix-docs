@@ -17,3 +17,8 @@ Stel dat je een plot wilt kopen van de gemeente. Welke factoren spelen dan een r
 * Als `isSellable` wordt ingesteld naar `false`, dan kan het plot niet verkocht worden.
 * `sellPrice` bepaalt de verkoopprijs van het plot
 * Als `sellPrice` niet gelijk is aan `null`, dan betekent dat dat het plot verkocht wordt en kan gekocht worden door een speler.
+
+!!! danger
+
+    mohamed is een noob, maar datalion ook.
+    `noobheid(Mohamed) > noobheid(DataLion)`
