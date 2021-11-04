@@ -21,6 +21,8 @@ nav:
       - easyui/README.md
   - Commando:
       - commando/README.md
+  - Plots:
+      - Economy: plots/economy.md
 
 theme:
   name: material
