@@ -23,6 +23,8 @@ nav:
       - commando/README.md
   - Plots:
       - Economy: plots/economy.md
+  - BlockActions:
+      - BlockActions/blockactions.md
 
 theme:
   name: material
