@@ -20,7 +20,7 @@ Dit type ActionBlock is veel interessanter. We kunnen met dit type heel makkelij
 
 Dit doe je als volgt:
 
-```
+```php
 <?php
 
 BlockActionModule::registerHandler("een_naam", function(PlayerInteractEvent $event){
