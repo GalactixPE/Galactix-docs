@@ -3,6 +3,7 @@ BlockActions is een handige API om snel blocks te linken aan bepaalde acties. Me
 
 ## Types
 Er zijn twee verschillende ActionBlocks:
+
 * Handler: deze triggeren interne code
 * Command: triggeren een lijst van commands die wordt ingesteld.
 
