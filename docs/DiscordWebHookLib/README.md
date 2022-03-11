@@ -31,10 +31,12 @@ $webHook->send($msg);
 ### Embeds
 Ook kun je dus embeds maken via deze library.
 Embed hebben 2 must have opties:
+
 * `Title` (Titel van de embed)
 * `Description` (Stuk tekst dat onder de titel staat)
 
 Daarnaast zijn er nog 7 extra functies:
+
 * `Author` (Author van de embed met profile URL)
 * `Color` (De kleur die de embed heeft, hiervoor kun je ook `EmbedColor` gebruiken, deze kleuren zijn gebasseerd op Bootstrap)
 * `Fields` (Verschillende substukjes die je kunt hebben in een embed.)
