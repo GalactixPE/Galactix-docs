@@ -1,0 +1,772 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Cache - GalactixPE devs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#caching" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="GalactixPE devs" class="md-header__button md-logo" aria-label="GalactixPE devs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GalactixPE devs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cache
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="GalactixPE devs" class="md-nav__button md-logo" aria-label="GalactixPE devs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    GalactixPE devs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Exos</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Exos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Exos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        Models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Cache
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Cache
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models-voorbereiden" class="md-nav__link">
+    Models voorbereiden
+  </a>
+  
+    <nav class="md-nav" aria-label="Models voorbereiden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-models-registreren" class="md-nav__link">
+    De models registreren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cacheable-interface-implementen" class="md-nav__link">
+    Cacheable interface implementen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-key-column" class="md-nav__link">
+    Primary key column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selector" class="md-nav__link">
+    Selector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gecachte-data-ophalen" class="md-nav__link">
+    Gecachte data ophalen
+  </a>
+  
+    <nav class="md-nav" aria-label="Gecachte data ophalen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inleiding" class="md-nav__link">
+    Inleiding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-fetchen" class="md-nav__link">
+    Data fetchen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gecachte-data-updaten" class="md-nav__link">
+    Gecachte data updaten
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../easyui/" class="md-nav__link">
+        EasyUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commando/" class="md-nav__link">
+        Commando
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Plots
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plots" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Plots
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plots/economy/" class="md-nav__link">
+        Economy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BlockActions/blockactions/" class="md-nav__link">
+        BlockActions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CityCoreMessager/" class="md-nav__link">
+        CityCoreMessager
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DiscordWebHookLib/" class="md-nav__link">
+        Discord Webhook Library
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models-voorbereiden" class="md-nav__link">
+    Models voorbereiden
+  </a>
+  
+    <nav class="md-nav" aria-label="Models voorbereiden">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-models-registreren" class="md-nav__link">
+    De models registreren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cacheable-interface-implementen" class="md-nav__link">
+    Cacheable interface implementen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-key-column" class="md-nav__link">
+    Primary key column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selector" class="md-nav__link">
+    Selector
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gecachte-data-ophalen" class="md-nav__link">
+    Gecachte data ophalen
+  </a>
+  
+    <nav class="md-nav" aria-label="Gecachte data ophalen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inleiding" class="md-nav__link">
+    Inleiding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-fetchen" class="md-nav__link">
+    Data fetchen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gecachte-data-updaten" class="md-nav__link">
+    Gecachte data updaten
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="caching">Caching</h1>
+<p>Geen zin om zelf een caching systeem te maken? Dat hoeft ook helemaal niet! Als je exos models gebruikt, dan kun je gewoon het ingebouwde caching systeem gebruiken. In deze read me lees je exact hoe dat moet.</p>
+<h2 id="models-voorbereiden">Models voorbereiden</h2>
+<p>Voordat we beginnen is het belangrijk dat je je model "klaar maakt" om gecached te worden. Hoe doe je dit?</p>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>Je table moet een:</li>
+<li>Auto_increment column hebben, die ook een primary key is</li>
+<li>Een gewone primary key die niet zijn value krijgt op de MySQL server.</li>
+<li>Model registreren</li>
+<li>Model moet de Cacheable interface implementen</li>
+</ul>
+<h3 id="de-models-registreren">De models registreren</h3>
+<p>Het is de bedoeling dat je elke model die je gebruikt, registreert bij de Exos ModelManager.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="nf">onEnable</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+<span class="p">{</span>
+  <span class="nx">ModelManager</span><span class="o">::</span><span class="na">register</span><span class="p">(</span><span class="nx">TestModel</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="cacheable-interface-implementen">Cacheable interface implementen</h3>
+<p>Elke model class die gecached moet worden, moet de <code>Cacheable</code> interface implementeren</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">TestModel</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="k">Implements</span> <span class="nx">Cacheable</span> <span class="p">{</span>
+
+
+
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="primary-key-column">Primary key column</h3>
+<p>Als de primary key column <strong>niet</strong> <code>id</code> heet, dan moet je dit aangeven in de Model class. Dit doe je door de <code>protected $primaryKeyColumn</code> property te herdefinieren.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">TestModel</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="k">Implements</span> <span class="nx">Cacheable</span> <span class="p">{</span>
+
+  <span class="k">protected</span> <span class="nv">$primaryKeyColumn</span> <span class="o">=</span> <span class="s2">&quot;id&quot;</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>Voila klaar is kees! Nu ben je helemaal klaar om de caching features van Exos te gebruiken. Wanneer de server opstart zal alle data in memory worden opgenomen.</p>
+<p>De data wordt opgeslagen naar de database:</p>
+<ul>
+<li>Wanneer de server uitgaat</li>
+<li>Om de x ticks</li>
+<li>Als er expliciet wordt gevraagd om de cache op te slaan met <code>CacheManager::saveCache()</code></li>
+</ul>
+<h2 id="selector">Selector</h2>
+<p>Soms kan het zijn dat je slechts een specifiek deel van de data wilt. In dat geval kun je gebruik maken van de selectors in Exos. Deze selectors worden uitgebreid besproken in de <strong>model docs.</strong> </p>
+<p>Kort samengevat, je kan de <code>where()</code> functie gebruiken om te specifieren aan welke voorwaarde de data waarop je de query zal uitvoeren moet voldoen.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nx">Car</span><span class="o">::</span><span class="na">cache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s2">&quot;brand&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;toyota&quot;</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="gecachte-data-ophalen">Gecachte data ophalen</h2>
+<h3 id="inleiding">Inleiding</h3>
+<p>Je kan zoals bij gewone models, data ophalen. Bij gecachte models gaat dit een heeeeeeeeeel klein beetje anders, echt waar. Het enige wat je moet doen is <code>cache()</code> toevoegen na de modelnaam en voila! Je kan al je favoriete functies gebruiken om je data op te halen.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nx">Car</span><span class="o">::</span><span class="na">cache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">fetchAll</span><span class="p">();</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="data-fetchen">Data fetchen</h3>
+<p>Nadat je hebt gespecifieerd aan welke voorwaarde de data moet voldoen, kun je kiezen om <strong>alle data</strong> of slechts <strong>een rij</strong> uit de cache op te halen.</p>
+<p>Je kan ook makkelijk data ophalen adhv de primary key met de <code>get()</code> functie. De get functie zal snel de data ophalen met de gevraagde primary key. Aangezien primary keys <code>unique</code> zijn, zal je slechts één resultaat krijgen.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>De primary key wordt gedefinieerd in de model class. Zie //wip link inserten.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="c1">// haalt alle data op</span>
+<span class="nx">Car</span><span class="o">::</span><span class="na">cache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s2">&quot;brand&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;toyota&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">fetchAll</span><span class="p">();</span>
+
+<span class="c1">// haalt slechts 1 rij op uit de cache</span>
+<span class="nx">Car</span><span class="o">::</span><span class="na">cache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s2">&quot;brand&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;toyota&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">firstOrNull</span><span class="p">();</span>
+
+<span class="c1">// haalt de data op adhv de primary key</span>
+<span class="nx">Car</span><span class="o">::</span><span class="na">cache</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>De fetchAll() en firstOrNull() functie returnen allebei direct de data. Dus het is niet nodig om een closure mee te geven. Mocht je closures leuker vinden, dan kun je die ook gebruiken.</p>
+</div>
+<h2 id="gecachte-data-updaten">Gecachte data updaten</h2>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../models/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Models" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Models
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../easyui/" class="md-footer__link md-footer__link--next" aria-label="Next: EasyUI" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              EasyUI
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

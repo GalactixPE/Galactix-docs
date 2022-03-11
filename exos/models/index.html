@@ -1,0 +1,899 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Models - GalactixPE devs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="GalactixPE devs" class="md-header__button md-logo" aria-label="GalactixPE devs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GalactixPE devs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="GalactixPE devs" class="md-nav__button md-logo" aria-label="GalactixPE devs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    GalactixPE devs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Exos</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Exos" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Exos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Models
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models_1" class="md-nav__link">
+    Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simpel-voorbeeld" class="md-nav__link">
+    Simpel voorbeeld
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speciale-properties" class="md-nav__link">
+    Speciale properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Speciale properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tablename" class="md-nav__link">
+    tablename
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-key-column" class="md-nav__link">
+    primary key column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phpstan" class="md-nav__link">
+    PHPStan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-ophalen-uit-de-database" class="md-nav__link">
+    Data ophalen uit de database
+  </a>
+  
+    <nav class="md-nav" aria-label="Data ophalen uit de database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-selector" class="md-nav__link">
+    Where selector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-opvragen" class="md-nav__link">
+    Data opvragen
+  </a>
+  
+    <nav class="md-nav" aria-label="Data opvragen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-target" class="md-nav__link">
+    From target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-updaten" class="md-nav__link">
+    Data updaten
+  </a>
+  
+    <nav class="md-nav" aria-label="Data updaten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-via-een-array-updaten" class="md-nav__link">
+    1. Via een array updaten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-een-enkele-column-zonder-array-updaten" class="md-nav__link">
+    2. Één enkele column zonder array updaten
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caching/" class="md-nav__link">
+        Cache
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../easyui/" class="md-nav__link">
+        EasyUI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../commando/" class="md-nav__link">
+        Commando
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Plots
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plots" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Plots
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plots/economy/" class="md-nav__link">
+        Economy
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BlockActions/blockactions/" class="md-nav__link">
+        BlockActions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CityCoreMessager/" class="md-nav__link">
+        CityCoreMessager
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DiscordWebHookLib/" class="md-nav__link">
+        Discord Webhook Library
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#models_1" class="md-nav__link">
+    Models
+  </a>
+  
+    <nav class="md-nav" aria-label="Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simpel-voorbeeld" class="md-nav__link">
+    Simpel voorbeeld
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#speciale-properties" class="md-nav__link">
+    Speciale properties
+  </a>
+  
+    <nav class="md-nav" aria-label="Speciale properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tablename" class="md-nav__link">
+    tablename
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#primary-key-column" class="md-nav__link">
+    primary key column
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phpstan" class="md-nav__link">
+    PHPStan
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-ophalen-uit-de-database" class="md-nav__link">
+    Data ophalen uit de database
+  </a>
+  
+    <nav class="md-nav" aria-label="Data ophalen uit de database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#where-selector" class="md-nav__link">
+    Where selector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-opvragen" class="md-nav__link">
+    Data opvragen
+  </a>
+  
+    <nav class="md-nav" aria-label="Data opvragen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-target" class="md-nav__link">
+    From target
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#result" class="md-nav__link">
+    Result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-updaten" class="md-nav__link">
+    Data updaten
+  </a>
+  
+    <nav class="md-nav" aria-label="Data updaten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-via-een-array-updaten" class="md-nav__link">
+    1. Via een array updaten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-een-enkele-column-zonder-array-updaten" class="md-nav__link">
+    2. Één enkele column zonder array updaten
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="models">Models</h1>
+<p><strong>Lees eerst de documentatie van de gewone query builder</strong></p>
+<h2 id="models_1">Models</h2>
+<p>Exos maakt het zeer gemakkelijk om specifieke data op te halen uit de database. Een van de tools die je kan gebruiken om met data om te gaan in je code zijn Exos Models.
+Een model is een class die de <code>Model</code> class extend. De class moet genoemd worden naar de <code>table</code> dat die modeled</p>
+<h3 id="simpel-voorbeeld">Simpel voorbeeld</h3>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="o">....</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">GalactixPE\CityCore\libs\Exos\model\Model</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Cars</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+
+
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="speciale-properties">Speciale properties</h3>
+<h4 id="tablename">tablename</h4>
+<p>Soms kan het zijn dat de Modelnaam niet hetzelfde is als de tablenaam. In dat geval kan je gebruik maken van de <code>protected string $tableName</code> property. In het onderstaande geval heet onze model <code>Cars</code>, maar heet de table <code>car</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="o">....</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">GalactixPE\CityCore\libs\Exos\model\Model</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Cars</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+
+  <span class="k">protected</span> <span class="nx">string</span> <span class="nv">$tableName</span> <span class="o">=</span> <span class="s2">&quot;car&quot;</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="primary-key-column">primary key column</h4>
+<p>Als je je primary key column <code>id</code> heet dan hoef je niks meer te doen. Als dit niet het geval is dan kun je gebruik maken van de <code>protected string $primaryKeyTable</code> property.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="o">....</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">GalactixPE\CityCore\libs\Exos\model\Model</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Cars</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+
+  <span class="k">protected</span> <span class="nx">string</span> <span class="nv">$primaryKeyTable</span> <span class="o">=</span> <span class="s2">&quot;car_id&quot;</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="phpstan">PHPStan</h3>
+<p>Deze stap is <strong>optioneel</strong>, maar wel nodig om PHPStan tevreden te houden en om gebruik te kunnen maken van de autocompletion in je IDE.</p>
+<p>Bij elke model kun je een PHPDoc toevoegen die alle columns definieert. Dit doe je als volgt:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="o">....</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">GalactixPE\CityCore\libs\Exos\model\Model</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd">* @property int $id</span>
+<span class="sd">* @property string $brand</span>
+<span class="sd">* @property int $kilometerstand</span>
+<span class="sd">*/</span>
+<span class="k">class</span> <span class="nc">Cars</span> <span class="k">extends</span> <span class="nx">Model</span> <span class="p">{</span>
+
+
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="data-ophalen-uit-de-database">Data ophalen uit de database</h2>
+<h3 id="where-selector">Where selector</h3>
+<p>Je kan met de <code>with()</code> functie selecten wat je precies uit de database wilt.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nx">Cars</span><span class="o">::</span><span class="na">with</span><span class="p">(</span><span class="s2">&quot;Brand&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;Toyota&quot;</span><span class="p">);</span>
+<span class="nx">Cars</span><span class="o">::</span><span class="na">with</span><span class="p">(</span><span class="s2">&quot;Kilometerstand&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+<span class="nx">Cars</span><span class="o">::</span><span class="na">with</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;!=&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="data-opvragen">Data opvragen</h3>
+<p>Om data op te halen gebruiken we de <code>fetchAll(Closure $closure)</code> of de <code>firstOrNull(Closure $closure)</code> functies.</p>
+<ul>
+<li><code>fetchAll()</code> returned alle matches uit de database en als er geen matches zijn dan returned de functie een lege lijst.</li>
+<li><code>firstOrNull()</code> returned de eerste match en als er geen is dan returned die null.</li>
+</ul>
+<p>Deze functies kun je combineren met de <code>with()</code> functie van hierboven</p>
+<p>Alle data wordt terug meegegeven als eerste argument in de closure</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nx">Cars</span><span class="o">::</span><span class="na">with</span><span class="p">(</span><span class="s2">&quot;Brand&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="na">fetchAll</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nv">$result</span><span class="p">){</span>
+      <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div>
+<h4 id="from-target">From target</h4>
+<p>Stel dat je één enkele kolom wilt opvragen uit de database, dan kun je gebruik maken van de <code>from()</code> method.</p>
+<p>Deze method komt overeen met de <code>SELECT ... FROM ...</code> query in SQL</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nx">Cars</span><span class="o">::</span><span class="na">from</span><span class="p">(</span><span class="s2">&quot;kilometerstand&quot;</span>
+  <span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s2">&quot;Brand&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="na">fetchAll</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nv">$result</span><span class="p">){</span>
+      <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$result</span><span class="p">);</span>
+    <span class="p">});</span>
+</code></pre></div>
+<h4 id="result">Result</h4>
+<p>Wanneer je data opvraagt via een model krijg je het resultaat terug in een closure.
+todo</p>
+<h3 id="data-updaten">Data updaten</h3>
+<p>Je kan data updaten via de <code>update()</code> functie op 2 manieren</p>
+<p>Deze functie kun je combineren met de <code>with()</code> functie</p>
+<h4 id="1-via-een-array-updaten">1. Via een array updaten</h4>
+<p>Met deze manier kan je meerdere columns tegelijk updaten</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nx">Cars</span><span class="o">::</span><span class="na">with</span><span class="p">(</span><span class="s2">&quot;Brand&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="na">update</span><span class="p">([</span>
+      <span class="s2">&quot;kilometerstand&quot;</span> <span class="o">=&gt;</span> <span class="mi">5000</span><span class="p">,</span>
+      <span class="s2">&quot;prijs&quot;</span> <span class="o">=&gt;</span> <span class="mi">50000</span>
+      <span class="p">]);</span>
+</code></pre></div>
+<h4 id="2-een-enkele-column-zonder-array-updaten">2. Één enkele column zonder array updaten</h4>
+<p>Je kan een enkele kolom ook updaten door de columnname en de value als argument mee te geven in de update functie</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="nx">Cars</span><span class="o">::</span><span class="na">with</span><span class="p">(</span><span class="s2">&quot;Brand&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;Toyota&quot;</span><span class="p">)</span>
+  <span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="s2">&quot;prijs&quot;</span><span class="p">,</span> <span class="mi">50000</span><span class="p">);</span>
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Exos" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Exos
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../caching/" class="md-footer__link md-footer__link--next" aria-label="Next: Cache" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Cache
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>
