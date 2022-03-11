@@ -3,6 +3,8 @@
 ### Maak webhook instantie
 Om een webhook te maken zul je een webhook URL moeten hebben.
 ```php
+<?php
+
 $webHook = new DiscordWebHook("WEBHOOK URL");
 ```
 ---
@@ -18,6 +20,8 @@ In die message kun je verschillende dingen aanpassen.
 
 Voorbeeld:
 ```php
+<?php
+
 $webHook = new DiscordWebHook("Webhook URL");
 
 $msg = new WebHookMessage();
@@ -47,6 +51,7 @@ Daarnaast zijn er nog 7 extra functies:
 
 Voorbeeld:
 ```php
+<?php
 
 $webHook = new DiscordWebHook("Webhook URL");
 
