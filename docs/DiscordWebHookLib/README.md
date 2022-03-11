@@ -3,8 +3,6 @@
 ### Maak webhook instantie
 Om een webhook te maken zul je een webhook URL moeten hebben.
 ```php
-<?php
-
 $webHook = new DiscordWebHook("WEBHOOK URL");
 ```
 ---
@@ -12,17 +10,14 @@ $webHook = new DiscordWebHook("WEBHOOK URL");
 ### Maken van message
 Om een message te maken zul je een `WebHookMessage` moeten gaan maken.
 In die message kun je verschillende dingen aanpassen.
-<br>
 * `Content` (Gewoon het bericht met een limiet van 2000 characters)
 * `Username` (Username die word gebruikt bij het bericht)
 * `AvatarUrl` (URL van profiel foto)
 * `TextToSpeech` (Of het bericht een text to speech bericht is.)
 * `Embed` (Embeds voor het bericht)
-<br><br>
+
 Voorbeeld:
 ```php
-<?php
-
 $webHook = new DiscordWebHook("Webhook URL");
 
 $msg = new WebHookMessage();
@@ -36,13 +31,12 @@ $webHook->send($msg);
 ### Embeds
 Ook kun je dus embeds maken via deze library.
 Embed hebben 2 must have opties:
-<br>
+
 * `Title` (Titel van de embed)
 * `Description` (Stuk tekst dat onder de titel staat)
 
-<br><br>
 Daarnaast zijn er nog 7 extra functies:
-<br>
+
 * `Author` (Author van de embed met profile URL)
 * `Color` (De kleur die de embed heeft, hiervoor kun je ook `EmbedColor` gebruiken, deze kleuren zijn gebasseerd op Bootstrap)
 * `Fields` (Verschillende substukjes die je kunt hebben in een embed.)
@@ -53,7 +47,6 @@ Daarnaast zijn er nog 7 extra functies:
 
 Voorbeeld:
 ```php
-<?php
 
 $webHook = new DiscordWebHook("Webhook URL");
 
