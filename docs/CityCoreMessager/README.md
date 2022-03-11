@@ -12,7 +12,7 @@ In ons systeem kennen we 5 soorten messages:
 Deze messages worden op deze manier gebruikt zodat we snel message formats kunnen aanpassen.
 <hr>
 
-### Message formating
+## Message formating
 Ook hebben we bepaalde message formatting die je kunt gebruiken om bepaalde strings duidelijker aan te kunnen geven.
 Dit kun je daarvoor gebruiken.
 
@@ -24,42 +24,52 @@ Dit kun je daarvoor gebruiken.
 
 <hr>
 
-### Info Message
+## Info Message
 ```php
+<?php
+
 CityCoreMessager::info($receiver, $moduleName, $message);
 
 // Bijvoorbeeld:
 CityCoreMessager::info($player, "Plots", "Dit plot is van: %HL%" . $plotOwnerName . "%HL_END%");
 ```
 
-### Error Message
+## Error Message
 ```php
+<?php
+
 CityCoreMessager::error($receiver, $moduleName, $message);
 
 // Bijvoorbeeld:
 CityCoreMessager::error($sender, "UniPerms", "Groep %HL%".$groupName."%HL_END% bestaat al.");
 ```
 
-### Success Message
+## Success Message
 ```php
+<?php
+
 CityCoreMessager::success($receiver, $moduleName, $message);
 
 // Bijvoorbeeld:
 CityCoreMessager::success($sender, "UniPerms", "Groep %HL%".$groupName."%HL_END% bestaat al.");
 ```
 
-### Warning Message
+## Warning Message
 ```php
+<?php
+
 CityCoreMessager::warning($receiver, $moduleName, $message);
 
 // Bijvoorbeeld:
 CityCoreMessager::warning($this->player, "GPS", "Je bent te ver afgeweken van de berekende route, een nieuwe route wordt gezocht");
 ```
 
-### List Message
+## List Message
 List messages zijn een klein stukje uitgebreider en hebben wat extra data nodig.
 
 ```php
+<?php
+
 CityCoreMessage::list($receiver, $listTitle, $itemsPerPage, $pageNumber, $arrayList, $numeric)
 
 CityCoreMessager::list($sender, "UniPerms Groups", 5, $page, $groupNames, false);
