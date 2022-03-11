@@ -25,6 +25,10 @@ nav:
       - Economy: plots/economy.md
   - BlockActions:
       - BlockActions/blockactions.md
+  - CityCoreMessager:
+      - CityCoreMessager/README.md
+  - Discord Webhook Library:
+      - DiscordWebHookLib/README.md
 
 theme:
   name: material
