@@ -12,6 +12,7 @@ $webHook = new DiscordWebHook("WEBHOOK URL");
 ### Maken van message
 Om een message te maken zul je een `WebHookMessage` moeten gaan maken.
 In die message kun je verschillende dingen aanpassen.
+
 * `Content` (Gewoon het bericht met een limiet van 2000 characters)
 * `Username` (Username die word gebruikt bij het bericht)
 * `AvatarUrl` (URL van profiel foto)
